@@ -6,7 +6,7 @@
      * 
      * Update steps:
      *  - Search wordpress directory (only .php files - regular expression) for 
-     *      ^define\(
+     *      define\(
      *  - Copy all results and paste in a new file
      *  - Search for 
      *      .+?define\(
@@ -20,29 +20,127 @@
     // https://github.com/WordPress/WordPress/blob/master/wordpress/index.php
     define( 'WP_USE_THEMES', true );
 
-    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-admin/admin-ajax.php
+    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-activate.php
+    define( 'WP_INSTALLING', true );
+
+    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-admin/admin.php
+    define( 'WP_ADMIN', true );
+    define( 'WP_NETWORK_ADMIN', false );
+    define( 'WP_USER_ADMIN', false );
+    define( 'WP_BLOG_ADMIN', true );
+    define( 'WP_LOAD_IMPORTERS', true );
+    define( 'WP_IMPORTING', true );
+
+    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-admin/async-upload.php
     define( 'DOING_AJAX', true );
 
-    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-admin/import.php
-    define( 'WP_LOAD_IMPORTERS', true );
+    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-admin/customize.php
+    define( 'IFRAME_REQUEST', true );
 
     // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-admin/includes/class-ftp.php
+    define('CRLF',"\r\n");
+    define("FTP_AUTOASCII", -1);
+    define("FTP_BINARY", 1);
+    define("FTP_ASCII", 0);
+    define('FTP_FORCE', true);
     define('FTP_OS_Unix','u');
     define('FTP_OS_Windows','w');
     define('FTP_OS_Mac','m');
 
+    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-admin/includes/class-pclzip.php
+    define( 'PCLZIP_READ_BLOCK_SIZE', 2048 );
+    define( 'PCLZIP_SEPARATOR', ',' );
+    define( 'PCLZIP_ERROR_EXTERNAL', 0 );
+    define( 'PCLZIP_TEMPORARY_DIR', '' );
+    define( 'PCLZIP_TEMPORARY_FILE_RATIO', 0.47 );
+    define( 'PCLZIP_ERR_USER_ABORTED', 2 );
+    define( 'PCLZIP_ERR_NO_ERROR', 0 );
+    define( 'PCLZIP_ERR_WRITE_OPEN_FAIL', -1 );
+    define( 'PCLZIP_ERR_READ_OPEN_FAIL', -2 );
+    define( 'PCLZIP_ERR_INVALID_PARAMETER', -3 );
+    define( 'PCLZIP_ERR_MISSING_FILE', -4 );
+    define( 'PCLZIP_ERR_FILENAME_TOO_LONG', -5 );
+    define( 'PCLZIP_ERR_INVALID_ZIP', -6 );
+    define( 'PCLZIP_ERR_BAD_EXTRACTED_FILE', -7 );
+    define( 'PCLZIP_ERR_DIR_CREATE_FAIL', -8 );
+    define( 'PCLZIP_ERR_BAD_EXTENSION', -9 );
+    define( 'PCLZIP_ERR_BAD_FORMAT', -10 );
+    define( 'PCLZIP_ERR_DELETE_FILE_FAIL', -11 );
+    define( 'PCLZIP_ERR_RENAME_FILE_FAIL', -12 );
+    define( 'PCLZIP_ERR_BAD_CHECKSUM', -13 );
+    define( 'PCLZIP_ERR_INVALID_ARCHIVE_ZIP', -14 );
+    define( 'PCLZIP_ERR_MISSING_OPTION_VALUE', -15 );
+    define( 'PCLZIP_ERR_INVALID_OPTION_VALUE', -16 );
+    define( 'PCLZIP_ERR_ALREADY_A_DIRECTORY', -17 );
+    define( 'PCLZIP_ERR_UNSUPPORTED_COMPRESSION', -18 );
+    define( 'PCLZIP_ERR_UNSUPPORTED_ENCRYPTION', -19 );
+    define( 'PCLZIP_ERR_INVALID_ATTRIBUTE_VALUE', -20 );
+    define( 'PCLZIP_ERR_DIRECTORY_RESTRICTION', -21 );
+    define( 'PCLZIP_OPT_PATH', 77001 );
+    define( 'PCLZIP_OPT_ADD_PATH', 77002 );
+    define( 'PCLZIP_OPT_REMOVE_PATH', 77003 );
+    define( 'PCLZIP_OPT_REMOVE_ALL_PATH', 77004 );
+    define( 'PCLZIP_OPT_SET_CHMOD', 77005 );
+    define( 'PCLZIP_OPT_EXTRACT_AS_STRING', 77006 );
+    define( 'PCLZIP_OPT_NO_COMPRESSION', 77007 );
+    define( 'PCLZIP_OPT_BY_NAME', 77008 );
+    define( 'PCLZIP_OPT_BY_INDEX', 77009 );
+    define( 'PCLZIP_OPT_BY_EREG', 77010 );
+    define( 'PCLZIP_OPT_BY_PREG', 77011 );
+    define( 'PCLZIP_OPT_COMMENT', 77012 );
+    define( 'PCLZIP_OPT_ADD_COMMENT', 77013 );
+    define( 'PCLZIP_OPT_PREPEND_COMMENT', 77014 );
+    define( 'PCLZIP_OPT_EXTRACT_IN_OUTPUT', 77015 );
+    define( 'PCLZIP_OPT_REPLACE_NEWER', 77016 );
+    define( 'PCLZIP_OPT_STOP_ON_ERROR', 77017 );
+    define( 'PCLZIP_OPT_CRYPT', 77018 );
+    define( 'PCLZIP_OPT_EXTRACT_DIR_RESTRICTION', 77019 );
+    define( 'PCLZIP_OPT_TEMP_FILE_THRESHOLD', 77020 );
+    define( 'PCLZIP_OPT_ADD_TEMP_FILE_THRESHOLD', 77020 ); // alias
+    define( 'PCLZIP_OPT_TEMP_FILE_ON', 77021 );
+    define( 'PCLZIP_OPT_ADD_TEMP_FILE_ON', 77021 ); // alias
+    define( 'PCLZIP_OPT_TEMP_FILE_OFF', 77022 );
+    define( 'PCLZIP_OPT_ADD_TEMP_FILE_OFF', 77022 ); // alias
+    define( 'PCLZIP_ATT_FILE_NAME', 79001 );
+    define( 'PCLZIP_ATT_FILE_NEW_SHORT_NAME', 79002 );
+    define( 'PCLZIP_ATT_FILE_NEW_FULL_NAME', 79003 );
+    define( 'PCLZIP_ATT_FILE_MTIME', 79004 );
+    define( 'PCLZIP_ATT_FILE_CONTENT', 79005 );
+    define( 'PCLZIP_ATT_FILE_COMMENT', 79006 );
+    define( 'PCLZIP_CB_PRE_EXTRACT', 78001 );
+    define( 'PCLZIP_CB_POST_EXTRACT', 78002 );
+    define( 'PCLZIP_CB_PRE_ADD', 78003 );
+    define( 'PCLZIP_CB_POST_ADD', 78004 );
+    define( 'PCLZIP_CB_PRE_LIST', 78005 );
+    define( 'PCLZIP_CB_POST_LIST', 78006 );
+    define( 'PCLZIP_CB_PRE_DELETE', 78007 );
+    define( 'PCLZIP_CB_POST_DELETE', 78008 );
+
     // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-admin/includes/export.php
     define( 'WXR_VERSION', '1.2' );
 
+    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-admin/includes/file.php
+    define( 'FS_CONNECT_TIMEOUT', 30 );
+    define( 'FS_TIMEOUT', 30 );
+    define( 'FS_CHMOD_DIR', (0777 | 0755 ) );
+    define( 'FS_CHMOD_FILE', (0777 | 0644 ) );
+
     // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-admin/includes/network.php
     define('MULTISITE', true);
-    define('SUBDOMAIN_INSTALL', true);
+    define('SUBDOMAIN_INSTALL', '');
     define('DOMAIN_CURRENT_SITE', '');
     define('PATH_CURRENT_SITE', '');
     define('SITE_ID_CURRENT_SITE', 1);
     define('BLOG_ID_CURRENT_SITE', 1);
+    define( '$c', '" . wp_generate_password( 64, true, true ) . "' );";
+    define( '$c', '" . substr( array_shift( $from_api ), 28, 64 ) . "' );";
 
-    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-admin/load-styles.php
+    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-admin/includes/plugin.php
+    define( 'WP_SANDBOX_SCRAPING', true );
+    define( 'WP_UNINSTALL_PLUGIN', $file );
+
+    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-admin/load-scripts.php
+    define( 'ABSPATH', dirname( dirname( __FILE__ ) ) . '/' );
     define( 'WPINC', 'wp-includes' );
 
     // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-admin/maint/repair.php
@@ -51,21 +149,8 @@
     // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-admin/network.php
     define( 'WP_INSTALLING_NETWORK', true );
 
-    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-admin/network/admin.php
-    define( 'WP_NETWORK_ADMIN', true );
-
-    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-admin/press-this.php
-    define( 'IFRAME_REQUEST', true );
-
-    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-admin/profile.php
-    define( 'IS_PROFILE_PAGE', true );
-
-    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-admin/setup-config.php
-    define( 'WP_INSTALLING', true );
-    define( 'WP_SETUP_CONFIG', true );
-
-    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-admin/user/admin.php
-    define( 'WP_USER_ADMIN', true );
+    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-admin/user-edit.php
+    define( 'IS_PROFILE_PAGE', ( $user_id == $current_user->ID ) );
 
     // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-config-sample.php
     define( 'DB_NAME', 'database_name_here' );
@@ -82,7 +167,6 @@
     define( 'SECURE_AUTH_SALT', 'put your unique phrase here' );
     define( 'LOGGED_IN_SALT',   'put your unique phrase here' );
     define( 'NONCE_SALT',       'put your unique phrase here' );
-    define( 'WP_DEBUG', false );
 
     // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-cron.php
     define( 'DOING_CRON', true );
@@ -168,6 +252,83 @@
     define('SIMPLEPIE_FILE_SOURCE_FSOCKOPEN', 4);
     define('SIMPLEPIE_FILE_SOURCE_CURL', 8);
     define('SIMPLEPIE_FILE_SOURCE_FILE_GET_CONTENTS', 16);
+
+    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-includes/class-wp-customize-manager.php
+    define( 'DOING_AUTOSAVE', true );
+
+    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-includes/class-wp-http-proxy.php
+    define('WP_PROXY_HOST', '192.168.84.101');
+    define('WP_PROXY_PORT', '8080');
+    define('WP_PROXY_BYPASS_HOSTS', 'localhost, www.example.com, *.wordpress.org');
+
+    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-includes/comment-template.php
+    define( 'COMMENTS_TEMPLATE', true );
+
+    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-includes/default-constants.php
+    define( 'KB_IN_BYTES', 1024 );
+    define( 'MB_IN_BYTES', 1024 * KB_IN_BYTES );
+    define( 'GB_IN_BYTES', 1024 * MB_IN_BYTES );
+    define( 'TB_IN_BYTES', 1024 * GB_IN_BYTES );
+    define( 'WP_START_TIMESTAMP', microtime( true ) );
+    define( 'WP_MEMORY_LIMIT', '40M' );
+    define( 'WP_MAX_MEMORY_LIMIT', '256M' );
+    define( 'WP_CONTENT_DIR', ABSPATH . 'wp-content' ); // no trailing slash, full paths only - WP_CONTENT_URL is defined further down
+    define( 'WP_DEBUG', false );
+    define( 'WP_DEBUG_DISPLAY', true );
+    define( 'WP_DEBUG_LOG', false );
+    define( 'WP_CACHE', false );
+    define( 'SCRIPT_DEBUG', $develop_src );
+    define( 'MEDIA_TRASH', false );
+    define( 'SHORTINIT', false );
+    define( 'WP_FEATURE_BETTER_PASSWORDS', true );
+    define( 'MINUTE_IN_SECONDS', 60 );
+    define( 'HOUR_IN_SECONDS', 60 * MINUTE_IN_SECONDS );
+    define( 'DAY_IN_SECONDS', 24 * HOUR_IN_SECONDS );
+    define( 'WEEK_IN_SECONDS', 7 * DAY_IN_SECONDS );
+    define( 'MONTH_IN_SECONDS', 30 * DAY_IN_SECONDS );
+    define( 'YEAR_IN_SECONDS', 365 * DAY_IN_SECONDS );
+    define( 'WP_CONTENT_URL', get_option( 'siteurl' ) . '/wp-content' ); // full url - WP_CONTENT_DIR is defined further up
+    define( 'WP_PLUGIN_DIR', WP_CONTENT_DIR . '/plugins' ); // full path, no trailing slash
+    define( 'WP_PLUGIN_URL', WP_CONTENT_URL . '/plugins' ); // full url, no trailing slash
+    define( 'PLUGINDIR', 'wp-content/plugins' ); // Relative to ABSPATH. For back compat.
+    define( 'WPMU_PLUGIN_DIR', WP_CONTENT_DIR . '/mu-plugins' ); // full path, no trailing slash
+    define( 'WPMU_PLUGIN_URL', WP_CONTENT_URL . '/mu-plugins' ); // full url, no trailing slash
+    define( 'MUPLUGINDIR', 'wp-content/mu-plugins' ); // Relative to ABSPATH. For back compat.
+    define( 'COOKIEHASH', '' );
+    define( 'USER_COOKIE', 'wordpressuser_' . COOKIEHASH );
+    define( 'PASS_COOKIE', 'wordpresspass_' . COOKIEHASH );
+    define( 'AUTH_COOKIE', 'wordpress_' . COOKIEHASH );
+    define( 'SECURE_AUTH_COOKIE', 'wordpress_sec_' . COOKIEHASH );
+    define( 'LOGGED_IN_COOKIE', 'wordpress_logged_in_' . COOKIEHASH );
+    define( 'TEST_COOKIE', 'wordpress_test_cookie' );
+    define( 'COOKIEPATH', preg_replace( '|https?://[^/]+|i', '', get_option( 'home' ) . '/' ) );
+    define( 'SITECOOKIEPATH', preg_replace( '|https?://[^/]+|i', '', get_option( 'siteurl' ) . '/' ) );
+    define( 'ADMIN_COOKIE_PATH', SITECOOKIEPATH . 'wp-admin' );
+    define( 'PLUGINS_COOKIE_PATH', preg_replace( '|https?://[^/]+|i', '', WP_PLUGIN_URL ) );
+    define( 'COOKIE_DOMAIN', false );
+    define( 'RECOVERY_MODE_COOKIE', 'wordpress_rec_' . COOKIEHASH );
+    define( 'FORCE_SSL_ADMIN', true );
+    define( 'AUTOSAVE_INTERVAL', 60 );
+    define( 'EMPTY_TRASH_DAYS', 30 );
+    define( 'WP_POST_REVISIONS', true );
+    define( 'WP_CRON_LOCK_TIMEOUT', 60 );  // In seconds
+    define( 'TEMPLATEPATH', get_template_directory() );
+    define( 'STYLESHEETPATH', get_stylesheet_directory() );
+    define( 'WP_DEFAULT_THEME', 'twentytwenty' );
+
+    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-includes/ID3/getid3.lib.php
+    define('PHP_INT_MIN', ~PHP_INT_MAX);
+
+    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-includes/ID3/getid3.php
+    define('GETID3_OS_ISWINDOWS', (stripos(PHP_OS, 'WIN') === 0));
+    define('GETID3_INCLUDEPATH', dirname(__FILE__).DIRECTORY_SEPARATOR);
+    define('IMG_JPG', IMAGETYPE_JPEG);
+    define('ENT_SUBSTITUTE', (defined('ENT_IGNORE') ? ENT_IGNORE : 8));
+    define('GETID3_TEMP_DIR', $temp_dir);
+    define('GETID3_HELPERAPPSDIR', $helperappsdir.DIRECTORY_SEPARATOR);
+
+    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-includes/ID3/module.audio-video.asf.php
+    define($GUIDname, $this->GUIDtoBytestring($hexstringvalue));
 
     // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-includes/ID3/module.audio-video.flv.php
     define('GETID3_FLV_TAG_AUDIO',          8);
@@ -384,11 +545,30 @@
     // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-includes/ID3/module.audio.mp3.php
     define('GETID3_MP3_VALID_CHECK_FRAMES', 35);
 
-    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-includes/ms-files.php
-    define( 'SHORTINIT', true );
+    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-includes/kses.php
+    define( 'CUSTOM_TAGS', false );
+
+    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-includes/load.php
+    define( 'WP_LANG_DIR', WP_CONTENT_DIR . '/languages' );
+    define( 'LANGDIR', 'wp-content/languages' );
+
+    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-includes/ms-default-constants.php
+    define( 'UPLOADBLOGSDIR', 'wp-content/blogs.dir' );
+    define( 'UPLOADS', UPLOADBLOGSDIR . '/' . $site_id . '/files/' );
+    define( 'BLOGUPLOADDIR', WP_CONTENT_DIR . '/blogs.dir/' . $site_id . '/files/' );
+    define( 'WPMU_SENDFILE', false );
+    define( 'WPMU_ACCEL_REDIRECT', false );
+    define( 'VHOST', 'no' );
+
+    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-includes/pomo/po.php
+    define( 'PO_MAX_LINE_LEN', 79 );
+
+    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-includes/random_compat/random.php
+    define('RANDOM_COMPAT_READ_BUFFER', 8);
 
     // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-includes/rest-api.php
     define( 'REST_API_VERSION', '2.0' );
+    define( 'REST_REQUEST', true );
 
     // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-includes/rewrite.php
     define( 'EP_NONE', 0 );
@@ -412,6 +592,29 @@
     define('RSS', 'RSS');
     define('ATOM', 'Atom');
     define('MAGPIE_USER_AGENT', 'WordPress/' . $GLOBALS['wp_version']);
+    define('MAGPIE_INITALIZED', 1);
+    define('MAGPIE_CACHE_ON', 1);
+    define('MAGPIE_CACHE_DIR', './cache');
+    define('MAGPIE_CACHE_AGE', 60*60); // one hour
+    define('MAGPIE_CACHE_FRESH_ONLY', 0);
+    define('MAGPIE_DEBUG', 0);
+    define('MAGPIE_FETCH_TIME_OUT', 2);	// 2 second timeout
+    define('MAGPIE_USE_GZIP', true);
+
+    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-includes/script-loader.php
+    define('CONCATENATE_SCRIPTS', false); 
+    define('COMPRESS_SCRIPTS', false); 
+    define('COMPRESS_CSS', false);
+    define('ENFORCE_GZIP', true); 
+
+    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-includes/theme.php
+    define( 'NO_HEADER_TEXT', empty( $args[0]['header-text'] ) );
+    define( 'HEADER_IMAGE_WIDTH', (int) $args[0]['width'] );
+    define( 'HEADER_IMAGE_HEIGHT', (int) $args[0]['height'] );
+    define( 'HEADER_TEXTCOLOR', $args[0]['default-text-color'] );
+    define( 'HEADER_IMAGE', $args[0]['default-image'] );
+    define( 'BACKGROUND_COLOR', $args[0]['default-color'] );
+    define( 'BACKGROUND_IMAGE', $args[0]['default-image'] );
 
     // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-includes/wp-db.php
     define( 'EZSQL_VERSION', 'WP1.25' );
@@ -420,6 +623,9 @@
     define( 'OBJECT_K', 'OBJECT_K' );
     define( 'ARRAY_A', 'ARRAY_A' );
     define( 'ARRAY_N', 'ARRAY_N' );
+
+    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-mail.php
+    define( 'WP_MAIL_INTERVAL', 300 ); // 5 minutes
 
     // https://github.com/WordPress/WordPress/blob/master/wordpress/xmlrpc.php
     define( 'XMLRPC_REQUEST', true );
