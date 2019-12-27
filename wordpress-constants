@@ -132,8 +132,6 @@
     define('PATH_CURRENT_SITE', '');
     define('SITE_ID_CURRENT_SITE', 1);
     define('BLOG_ID_CURRENT_SITE', 1);
-    define( '$c', '" . wp_generate_password( 64, true, true ) . "' );";
-    define( '$c', '" . substr( array_shift( $from_api ), 28, 64 ) . "' );";
 
     // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-admin/includes/plugin.php
     define( 'WP_SANDBOX_SCRAPING', true );
@@ -326,9 +324,6 @@
     define('ENT_SUBSTITUTE', (defined('ENT_IGNORE') ? ENT_IGNORE : 8));
     define('GETID3_TEMP_DIR', $temp_dir);
     define('GETID3_HELPERAPPSDIR', $helperappsdir.DIRECTORY_SEPARATOR);
-
-    // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-includes/ID3/module.audio-video.asf.php
-    define($GUIDname, $this->GUIDtoBytestring($hexstringvalue));
 
     // https://github.com/WordPress/WordPress/blob/master/wordpress/wp-includes/ID3/module.audio-video.flv.php
     define('GETID3_FLV_TAG_AUDIO',          8);
