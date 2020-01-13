@@ -1,3 +1,3 @@
 <?php
 
-define( 'ABSPATH', dirname( __FILE__ ) . '/' );
+define( 'ABSPATH', '/' );
