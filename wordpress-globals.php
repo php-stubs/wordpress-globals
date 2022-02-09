@@ -1,19 +1,48 @@
 <?php
-// ./wp-admin/includes/class-ftp.php
+// ./wp-config.php
 
-define( 'CRLF', "\r\n" );
-define( 'FTP_AUTOASCII', -1 );
-define( 'FTP_BINARY', 1 );
-define( 'FTP_ASCII', 0 );
-define( 'FTP_FORCE', true );
-define( 'FTP_OS_Unix', 'u' );
-define( 'FTP_OS_Windows', 'w' );
-define( 'FTP_OS_Mac', 'm' );
+define( 'DB_NAME', '' );
+define( 'DB_USER', '' );
+define( 'DB_PASSWORD', '' );
+define( 'DB_HOST', 'localhost' );
+define( 'DB_CHARSET', 'utf8' );
+define( 'DB_COLLATE', '' );
+define( 'AUTH_KEY', '' );
+define( 'SECURE_AUTH_KEY', '' );
+define( 'LOGGED_IN_KEY', '' );
+define( 'NONCE_KEY', '' );
+define( 'AUTH_SALT', '' );
+define( 'SECURE_AUTH_SALT', '' );
+define( 'LOGGED_IN_SALT', '' );
+define( 'NONCE_SALT', '' );
 
-// ./wp-admin/includes/plugin.php
+// ./wp-cron.php
 
-define( 'WP_SANDBOX_SCRAPING', true );
-define( 'WP_UNINSTALL_PLUGIN', 'file' );
+define( 'DOING_CRON', true );
+
+// ./index.php
+
+define( 'WP_USE_THEMES', true );
+
+// ./wp-activate.php
+
+define( 'WP_INSTALLING', true );
+
+// ./xmlrpc.php
+
+define( 'XMLRPC_REQUEST', true );
+
+// ./wp-mail.php
+
+define( 'WP_MAIL_INTERVAL', 300 );
+
+// ./wp-load.php
+
+define( 'ABSPATH', '/' );
+
+// ./wp-settings.php
+
+define( 'WPINC', 'wp-includes' );
 
 // ./wp-admin/includes/class-pclzip.php
 
@@ -92,6 +121,15 @@ define( 'FS_TIMEOUT', 30 );
 define( 'FS_CHMOD_DIR', ( 0777 | 0755 ) );
 define( 'FS_CHMOD_FILE', ( 0777 | 0644 ) );
 
+// ./wp-admin/includes/export.php
+
+define( 'WXR_VERSION', '1.2' );
+
+// ./wp-admin/includes/plugin.php
+
+define( 'WP_SANDBOX_SCRAPING', true );
+define( 'WP_UNINSTALL_PLUGIN', 'file' );
+
 // ./wp-admin/includes/network.php
 
 define( 'MULTISITE', true );
@@ -101,13 +139,31 @@ define( 'PATH_CURRENT_SITE', '' );
 define( 'SITE_ID_CURRENT_SITE', 1 );
 define( 'BLOG_ID_CURRENT_SITE', 1 );
 
-// ./wp-admin/includes/export.php
+// ./wp-admin/includes/class-ftp.php
 
-define( 'WXR_VERSION', '1.2' );
+define( 'CRLF', "\r\n" );
+define( 'FTP_AUTOASCII', -1 );
+define( 'FTP_BINARY', 1 );
+define( 'FTP_ASCII', 0 );
+define( 'FTP_FORCE', true );
+define( 'FTP_OS_Unix', 'u' );
+define( 'FTP_OS_Windows', 'w' );
+define( 'FTP_OS_Mac', 'm' );
+
+// ./wp-admin/async-upload.php
+
+define( 'DOING_AJAX', true );
 
 // ./wp-admin/customize.php
 
 define( 'IFRAME_REQUEST', true );
+
+// ./wp-admin/network.php
+define( 'WP_INSTALLING_NETWORK', true );
+
+// ./wp-admin/maint/repair.php
+
+define( 'WP_REPAIRING', true );
 
 // ./wp-admin/admin.php
 
@@ -118,292 +174,9 @@ define( 'WP_BLOG_ADMIN', true );
 define( 'WP_LOAD_IMPORTERS', true );
 define( 'WP_IMPORTING', true );
 
-// ./wp-admin/async-upload.php
-
-define( 'DOING_AJAX', true );
-
-// ./wp-admin/maint/repair.php
-
-define( 'WP_REPAIRING', true );
-
-// ./wp-admin/network.php
-define( 'WP_INSTALLING_NETWORK', true );
-
 // ./wp-admin/user-edit.php
 
 define( 'IS_PROFILE_PAGE', true );
-
-// ./wp-config.php
-
-define( 'DB_NAME', '' );
-define( 'DB_USER', '' );
-define( 'DB_PASSWORD', '' );
-define( 'DB_HOST', 'localhost' );
-define( 'DB_CHARSET', 'utf8' );
-define( 'DB_COLLATE', '' );
-define( 'AUTH_KEY', '' );
-define( 'SECURE_AUTH_KEY', '' );
-define( 'LOGGED_IN_KEY', '' );
-define( 'NONCE_KEY', '' );
-define( 'AUTH_SALT', '' );
-define( 'SECURE_AUTH_SALT', '' );
-define( 'LOGGED_IN_SALT', '' );
-define( 'NONCE_SALT', '' );
-
-// ./wp-mail.php
-
-define( 'WP_MAIL_INTERVAL', 300 );
-
-// ./wp-cron.php
-
-define( 'DOING_CRON', true );
-
-// ./xmlrpc.php
-
-define( 'XMLRPC_REQUEST', true );
-
-// ./wp-activate.php
-
-define( 'WP_INSTALLING', true );
-
-// ./wp-settings.php
-
-define( 'WPINC', 'wp-includes' );
-
-// ./wp-load.php
-
-define( 'ABSPATH', '/' );
-
-// ./wp-includes/load.php
-
-define( 'WP_LANG_DIR', 'wp-content/languages' );
-define( 'LANGDIR', 'wp-content/languages' );
-
-// ./wp-includes/pomo/po.php
-
-define( 'PO_MAX_LINE_LEN', 79 );
-
-// ./wp-includes/class-wp-http-proxy.php
-
-define( 'WP_PROXY_HOST', '127.0.0.1' );
-define( 'WP_PROXY_PORT', '8080' );
-define( 'WP_PROXY_BYPASS_HOSTS', 'localhost, www.example.com, *.wordpress.org' );
-
-// ./wp-includes/ms-default-constants.php
-
-define( 'UPLOADBLOGSDIR', 'wp-content/blogs.dir' );
-define( 'UPLOADS', 'wp-content/blogs.dir/0/files/' );
-define( 'BLOGUPLOADDIR', 'wp-content/blogs.dir/0/files/' );
-define( 'WPMU_SENDFILE', false );
-define( 'WPMU_ACCEL_REDIRECT', false );
-define( 'VHOST', 'no' );
-
-// ./wp-includes/theme.php
-
-define( 'NO_HEADER_TEXT', false );
-define( 'HEADER_IMAGE_WIDTH', 1280 );
-define( 'HEADER_IMAGE_HEIGHT', 768 );
-define( 'HEADER_TEXTCOLOR', 'black' );
-define( 'HEADER_IMAGE', 'image,.jpg' );
-define( 'BACKGROUND_COLOR', 'white' );
-define( 'BACKGROUND_IMAGE', 'background.jpg' );
-
-// ./wp-includes/default-constants.php
-
-define( 'KB_IN_BYTES', 1024 );
-define( 'MB_IN_BYTES', 1024 * KB_IN_BYTES );
-define( 'GB_IN_BYTES', 1024 * MB_IN_BYTES );
-define( 'TB_IN_BYTES', 1024 * GB_IN_BYTES );
-
-define( 'WP_START_TIMESTAMP', microtime( true ) );
-
-define( 'WP_MEMORY_LIMIT', '40M' );
-
-define( 'WP_MAX_MEMORY_LIMIT', '256M' );
-
-define( 'WP_CONTENT_DIR', './wp-content' );
-
-define( 'WP_DEBUG', false );
-
-define( 'WP_DEBUG_DISPLAY', true );
-
-define( 'WP_DEBUG_LOG', false );
-
-define( 'WP_CACHE', false );
-
-define( 'SCRIPT_DEBUG', false );
-
-define( 'MEDIA_TRASH', false );
-
-define( 'SHORTINIT', false );
-
-define( 'WP_FEATURE_BETTER_PASSWORDS', true );
-
-define( 'MINUTE_IN_SECONDS', 60 );
-define( 'HOUR_IN_SECONDS', 60 * MINUTE_IN_SECONDS );
-define( 'DAY_IN_SECONDS', 24 * HOUR_IN_SECONDS );
-define( 'WEEK_IN_SECONDS', 7 * DAY_IN_SECONDS );
-define( 'MONTH_IN_SECONDS', 30 * DAY_IN_SECONDS );
-define( 'YEAR_IN_SECONDS', 365 * DAY_IN_SECONDS );
-
-define( 'WP_CONTENT_URL', 'https://localhost/wp-content' );
-
-define( 'WP_PLUGIN_DIR', WP_CONTENT_DIR . '/plugins' );
-
-define( 'WP_PLUGIN_URL', WP_CONTENT_URL . '/plugins' );
-
-define( 'PLUGINDIR', 'wp-content/plugins' );
-
-define( 'WPMU_PLUGIN_DIR', WP_CONTENT_DIR . '/mu-plugins' );
-
-define( 'WPMU_PLUGIN_URL', WP_CONTENT_URL . '/mu-plugins' );
-
-define( 'COOKIEHASH', '' );
-
-define( 'USER_COOKIE', 'wordpressuser_' . COOKIEHASH );
-
-define( 'PASS_COOKIE', 'wordpresspass_' . COOKIEHASH );
-
-define( 'AUTH_COOKIE', 'wordpress_' . COOKIEHASH );
-
-define( 'SECURE_AUTH_COOKIE', 'wordpress_sec_' . COOKIEHASH );
-
-define( 'LOGGED_IN_COOKIE', 'wordpress_logged_in_' . COOKIEHASH );
-
-define( 'TEST_COOKIE', 'wordpress_test_cookie' );
-
-define( 'COOKIEPATH', '/' );
-
-define( 'SITECOOKIEPATH', '/' );
-
-define( 'ADMIN_COOKIE_PATH', SITECOOKIEPATH . 'wp-admin' );
-
-define( 'PLUGINS_COOKIE_PATH', '/wp-content/plugins' );
-
-define( 'COOKIE_DOMAIN', false );
-
-define( 'RECOVERY_MODE_COOKIE', 'wordpress_rec_' . COOKIEHASH );
-
-define( 'FORCE_SSL_ADMIN', true );
-
-define( 'AUTOSAVE_INTERVAL', 60 );
-
-define( 'EMPTY_TRASH_DAYS', 30 );
-
-define( 'WP_POST_REVISIONS', true );
-
-define( 'WP_CRON_LOCK_TIMEOUT', 60 );
-
-define( 'TEMPLATEPATH', '/wp-content/themes/default' );
-
-define( 'STYLESHEETPATH', '/wp-content/themes/default' );
-
-define( 'WP_DEFAULT_THEME', 'twentytwenty' );
-
-// ./wp-includes/kses.php
-
-define( 'CUSTOM_TAGS', false );
-
-// ./wp-includes/wp-db.php
-
-define( 'EZSQL_VERSION', 'WP1.25' );
-define( 'OBJECT', 'OBJECT' );
-define( 'OBJECT_K', 'OBJECT_K' );
-define( 'ARRAY_A', 'ARRAY_A' );
-define( 'ARRAY_N', 'ARRAY_N' );
-
-// ./wp-includes/class-simplepie.php
-
-define( 'SIMPLEPIE_NAME', 'SimplePie' );
-define( 'SIMPLEPIE_VERSION', '1.3.1' );
-define( 'SIMPLEPIE_BUILD', '20200101000000' );
-define( 'SIMPLEPIE_URL', 'http://simplepie.org' );
-define( 'SIMPLEPIE_USERAGENT', 'SimplePie/1.3.1 (Feed Parser; http://simplepie.org; Allow like Gecko) Build/20200101000000' );
-define( 'SIMPLEPIE_LINKBACK', '' );
-define( 'SIMPLEPIE_LOCATOR_NONE', 0 );
-define( 'SIMPLEPIE_LOCATOR_AUTODISCOVERY', 1 );
-define( 'SIMPLEPIE_LOCATOR_LOCAL_EXTENSION', 2 );
-define( 'SIMPLEPIE_LOCATOR_LOCAL_BODY', 4 );
-define( 'SIMPLEPIE_LOCATOR_REMOTE_EXTENSION', 8 );
-define( 'SIMPLEPIE_LOCATOR_REMOTE_BODY', 16 );
-define( 'SIMPLEPIE_LOCATOR_ALL', 31 );
-define( 'SIMPLEPIE_TYPE_NONE', 0 );
-define( 'SIMPLEPIE_TYPE_RSS_090', 1 );
-define( 'SIMPLEPIE_TYPE_RSS_091_NETSCAPE', 2 );
-define( 'SIMPLEPIE_TYPE_RSS_091_USERLAND', 4 );
-define( 'SIMPLEPIE_TYPE_RSS_091', 6 );
-define( 'SIMPLEPIE_TYPE_RSS_092', 8 );
-define( 'SIMPLEPIE_TYPE_RSS_093', 16 );
-define( 'SIMPLEPIE_TYPE_RSS_094', 32 );
-define( 'SIMPLEPIE_TYPE_RSS_10', 64 );
-define( 'SIMPLEPIE_TYPE_RSS_20', 128 );
-define( 'SIMPLEPIE_TYPE_RSS_RDF', 65 );
-define( 'SIMPLEPIE_TYPE_RSS_SYNDICATION', 190 );
-define( 'SIMPLEPIE_TYPE_RSS_ALL', 255 );
-define( 'SIMPLEPIE_TYPE_ATOM_03', 256 );
-define( 'SIMPLEPIE_TYPE_ATOM_10', 512 );
-define( 'SIMPLEPIE_TYPE_ATOM_ALL', 768 );
-define( 'SIMPLEPIE_TYPE_ALL', 1023 );
-define( 'SIMPLEPIE_CONSTRUCT_NONE', 0 );
-define( 'SIMPLEPIE_CONSTRUCT_TEXT', 1 );
-define( 'SIMPLEPIE_CONSTRUCT_HTML', 2 );
-define( 'SIMPLEPIE_CONSTRUCT_XHTML', 4 );
-define( 'SIMPLEPIE_CONSTRUCT_BASE64', 8 );
-define( 'SIMPLEPIE_CONSTRUCT_IRI', 16 );
-define( 'SIMPLEPIE_CONSTRUCT_MAYBE_HTML', 32 );
-define( 'SIMPLEPIE_CONSTRUCT_ALL', 63 );
-define( 'SIMPLEPIE_SAME_CASE', 1 );
-define( 'SIMPLEPIE_LOWERCASE', 2 );
-define( 'SIMPLEPIE_UPPERCASE', 4 );
-define( 'SIMPLEPIE_PCRE_HTML_ATTRIBUTE', '((?:[\x09\x0A\x0B\x0C\x0D\x20]+[^\x09\x0A\x0B\x0C\x0D\x20\x2F\x3E][^\x09\x0A\x0B\x0C\x0D\x20\x2F\x3D\x3E]*(?:[\x09\x0A\x0B\x0C\x0D\x20]*=[\x09\x0A\x0B\x0C\x0D\x20]*(?:"(?:[^"]* )"|\'(?:[^\']* )\'|(?:[^\x09\x0A\x0B\x0C\x0D\x20\x22\x27\x3E][^\x09\x0A\x0B\x0C\x0D\x20\x3E]* )? ) )? )* )[\x09\x0A\x0B\x0C\x0D\x20]*' );
-define( 'SIMPLEPIE_PCRE_XML_ATTRIBUTE', '((?:\s+(?:(?:[^\s:]+: )?[^\s:]+ )\s*=\s*(?:"(?:[^"]* )"|\'(?:[^\']* )\' ) )* )\s*' );
-define( 'SIMPLEPIE_NAMESPACE_XML', 'http://www.w3.org/XML/1998/namespace' );
-define( 'SIMPLEPIE_NAMESPACE_ATOM_10', 'http://www.w3.org/2005/Atom' );
-define( 'SIMPLEPIE_NAMESPACE_ATOM_03', 'http://purl.org/atom/ns#' );
-define( 'SIMPLEPIE_NAMESPACE_RDF', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#' );
-define( 'SIMPLEPIE_NAMESPACE_RSS_090', 'http://my.netscape.com/rdf/simple/0.9/' );
-define( 'SIMPLEPIE_NAMESPACE_RSS_10', 'http://purl.org/rss/1.0/' );
-define( 'SIMPLEPIE_NAMESPACE_RSS_10_MODULES_CONTENT', 'http://purl.org/rss/1.0/modules/content/' );
-define( 'SIMPLEPIE_NAMESPACE_RSS_20', '' );
-define( 'SIMPLEPIE_NAMESPACE_DC_10', 'http://purl.org/dc/elements/1.0/' );
-define( 'SIMPLEPIE_NAMESPACE_DC_11', 'http://purl.org/dc/elements/1.1/' );
-define( 'SIMPLEPIE_NAMESPACE_W3C_BASIC_GEO', 'http://www.w3.org/2003/01/geo/wgs84_pos#' );
-define( 'SIMPLEPIE_NAMESPACE_GEORSS', 'http://www.georss.org/georss' );
-define( 'SIMPLEPIE_NAMESPACE_MEDIARSS', 'http://search.yahoo.com/mrss/' );
-define( 'SIMPLEPIE_NAMESPACE_MEDIARSS_WRONG', 'http://search.yahoo.com/mrss' );
-define( 'SIMPLEPIE_NAMESPACE_MEDIARSS_WRONG2', 'http://video.search.yahoo.com/mrss' );
-define( 'SIMPLEPIE_NAMESPACE_MEDIARSS_WRONG3', 'http://video.search.yahoo.com/mrss/' );
-define( 'SIMPLEPIE_NAMESPACE_MEDIARSS_WRONG4', 'http://www.rssboard.org/media-rss' );
-define( 'SIMPLEPIE_NAMESPACE_MEDIARSS_WRONG5', 'http://www.rssboard.org/media-rss/' );
-define( 'SIMPLEPIE_NAMESPACE_ITUNES', 'http://www.itunes.com/dtds/podcast-1.0.dtd' );
-define( 'SIMPLEPIE_NAMESPACE_XHTML', 'http://www.w3.org/1999/xhtml' );
-define( 'SIMPLEPIE_IANA_LINK_RELATIONS_REGISTRY', 'http://www.iana.org/assignments/relation/' );
-define( 'SIMPLEPIE_FILE_SOURCE_NONE', 0 );
-define( 'SIMPLEPIE_FILE_SOURCE_REMOTE', 1 );
-define( 'SIMPLEPIE_FILE_SOURCE_LOCAL', 2 );
-define( 'SIMPLEPIE_FILE_SOURCE_FSOCKOPEN', 4 );
-define( 'SIMPLEPIE_FILE_SOURCE_CURL', 8 );
-define( 'SIMPLEPIE_FILE_SOURCE_FILE_GET_CONTENTS', 16 );
-
-// ./wp-includes/comment-template.php
-
-define( 'COMMENTS_TEMPLATE', true );
-
-// ./wp-includes/class-wp-customize-manager.php
-
-define( 'DOING_AUTOSAVE', true );
-
-// ./wp-includes/script-loader.php
-
-define( 'CONCATENATE_SCRIPTS', false );
-define( 'COMPRESS_SCRIPTS', false );
-define( 'COMPRESS_CSS', false );
-define( 'ENFORCE_GZIP', true );
-
-// ./wp-includes/rest-api.php
-
-define( 'REST_API_VERSION', '2.0' );
-define( 'REST_REQUEST', true );
 
 // ./wp-includes/rss.php
 
@@ -419,9 +192,14 @@ define( 'MAGPIE_DEBUG', 0 );
 define( 'MAGPIE_FETCH_TIME_OUT', 2 );
 define( 'MAGPIE_USE_GZIP', true );
 
-// ./wp-includes/ID3/module.audio.mp3.php
+// ./wp-includes/comment-template.php
 
-define( 'GETID3_MP3_VALID_CHECK_FRAMES', 35 );
+define( 'COMMENTS_TEMPLATE', true );
+
+// ./wp-includes/load.php
+
+define( 'WP_LANG_DIR', 'wp-content/languages' );
+define( 'LANGDIR', 'wp-content/languages' );
 
 // ./wp-includes/ID3/getid3.php
 
@@ -432,26 +210,9 @@ define( 'ENT_SUBSTITUTE', 8 );
 define( 'GETID3_TEMP_DIR', '/tmp' );
 define( 'GETID3_HELPERAPPSDIR', '/' );
 
-// ./wp-includes/ID3/module.audio-video.flv.php
+// ./wp-includes/ID3/module.audio.mp3.php
 
-define( 'GETID3_FLV_TAG_AUDIO', 8 );
-define( 'GETID3_FLV_TAG_VIDEO', 9 );
-define( 'GETID3_FLV_TAG_META', 18 );
-define( 'GETID3_FLV_VIDEO_H263', 2 );
-define( 'GETID3_FLV_VIDEO_SCREEN', 3 );
-define( 'GETID3_FLV_VIDEO_VP6FLV', 4 );
-define( 'GETID3_FLV_VIDEO_VP6FLV_ALPHA', 5 );
-define( 'GETID3_FLV_VIDEO_SCREENV2', 6 );
-define( 'GETID3_FLV_VIDEO_H264', 7 );
-define( 'H264_AVC_SEQUENCE_HEADER', 0 );
-define( 'H264_PROFILE_BASELINE', 66 );
-define( 'H264_PROFILE_MAIN', 77 );
-define( 'H264_PROFILE_EXTENDED', 88 );
-define( 'H264_PROFILE_HIGH', 100 );
-define( 'H264_PROFILE_HIGH10', 110 );
-define( 'H264_PROFILE_HIGH422', 122 );
-define( 'H264_PROFILE_HIGH444', 144 );
-define( 'H264_PROFILE_HIGH444_PREDICTIVE', 244 );
+define( 'GETID3_MP3_VALID_CHECK_FRAMES', 35 );
 
 // ./wp-includes/ID3/module.audio-video.matroska.php
 
@@ -646,6 +407,119 @@ define( 'EBML_ID_CLUSTERREFERENCEPRIORITY', 0x7A );
 define( 'EBML_ID_CLUSTERREFERENCEBLOCK', 0x7B );
 define( 'EBML_ID_CLUSTERREFERENCEVIRTUAL', 0x7D );
 
+// ./wp-includes/ID3/module.audio-video.flv.php
+
+define( 'GETID3_FLV_TAG_AUDIO', 8 );
+define( 'GETID3_FLV_TAG_VIDEO', 9 );
+define( 'GETID3_FLV_TAG_META', 18 );
+define( 'GETID3_FLV_VIDEO_H263', 2 );
+define( 'GETID3_FLV_VIDEO_SCREEN', 3 );
+define( 'GETID3_FLV_VIDEO_VP6FLV', 4 );
+define( 'GETID3_FLV_VIDEO_VP6FLV_ALPHA', 5 );
+define( 'GETID3_FLV_VIDEO_SCREENV2', 6 );
+define( 'GETID3_FLV_VIDEO_H264', 7 );
+define( 'H264_AVC_SEQUENCE_HEADER', 0 );
+define( 'H264_PROFILE_BASELINE', 66 );
+define( 'H264_PROFILE_MAIN', 77 );
+define( 'H264_PROFILE_EXTENDED', 88 );
+define( 'H264_PROFILE_HIGH', 100 );
+define( 'H264_PROFILE_HIGH10', 110 );
+define( 'H264_PROFILE_HIGH422', 122 );
+define( 'H264_PROFILE_HIGH444', 144 );
+define( 'H264_PROFILE_HIGH444_PREDICTIVE', 244 );
+
+// ./wp-includes/kses.php
+
+define( 'CUSTOM_TAGS', false );
+
+// ./wp-includes/class-simplepie.php
+
+define( 'SIMPLEPIE_NAME', 'SimplePie' );
+define( 'SIMPLEPIE_VERSION', '1.3.1' );
+define( 'SIMPLEPIE_BUILD', '20200101000000' );
+define( 'SIMPLEPIE_URL', 'http://simplepie.org' );
+define( 'SIMPLEPIE_USERAGENT', 'SimplePie/1.3.1 (Feed Parser; http://simplepie.org; Allow like Gecko) Build/20200101000000' );
+define( 'SIMPLEPIE_LINKBACK', '' );
+define( 'SIMPLEPIE_LOCATOR_NONE', 0 );
+define( 'SIMPLEPIE_LOCATOR_AUTODISCOVERY', 1 );
+define( 'SIMPLEPIE_LOCATOR_LOCAL_EXTENSION', 2 );
+define( 'SIMPLEPIE_LOCATOR_LOCAL_BODY', 4 );
+define( 'SIMPLEPIE_LOCATOR_REMOTE_EXTENSION', 8 );
+define( 'SIMPLEPIE_LOCATOR_REMOTE_BODY', 16 );
+define( 'SIMPLEPIE_LOCATOR_ALL', 31 );
+define( 'SIMPLEPIE_TYPE_NONE', 0 );
+define( 'SIMPLEPIE_TYPE_RSS_090', 1 );
+define( 'SIMPLEPIE_TYPE_RSS_091_NETSCAPE', 2 );
+define( 'SIMPLEPIE_TYPE_RSS_091_USERLAND', 4 );
+define( 'SIMPLEPIE_TYPE_RSS_091', 6 );
+define( 'SIMPLEPIE_TYPE_RSS_092', 8 );
+define( 'SIMPLEPIE_TYPE_RSS_093', 16 );
+define( 'SIMPLEPIE_TYPE_RSS_094', 32 );
+define( 'SIMPLEPIE_TYPE_RSS_10', 64 );
+define( 'SIMPLEPIE_TYPE_RSS_20', 128 );
+define( 'SIMPLEPIE_TYPE_RSS_RDF', 65 );
+define( 'SIMPLEPIE_TYPE_RSS_SYNDICATION', 190 );
+define( 'SIMPLEPIE_TYPE_RSS_ALL', 255 );
+define( 'SIMPLEPIE_TYPE_ATOM_03', 256 );
+define( 'SIMPLEPIE_TYPE_ATOM_10', 512 );
+define( 'SIMPLEPIE_TYPE_ATOM_ALL', 768 );
+define( 'SIMPLEPIE_TYPE_ALL', 1023 );
+define( 'SIMPLEPIE_CONSTRUCT_NONE', 0 );
+define( 'SIMPLEPIE_CONSTRUCT_TEXT', 1 );
+define( 'SIMPLEPIE_CONSTRUCT_HTML', 2 );
+define( 'SIMPLEPIE_CONSTRUCT_XHTML', 4 );
+define( 'SIMPLEPIE_CONSTRUCT_BASE64', 8 );
+define( 'SIMPLEPIE_CONSTRUCT_IRI', 16 );
+define( 'SIMPLEPIE_CONSTRUCT_MAYBE_HTML', 32 );
+define( 'SIMPLEPIE_CONSTRUCT_ALL', 63 );
+define( 'SIMPLEPIE_SAME_CASE', 1 );
+define( 'SIMPLEPIE_LOWERCASE', 2 );
+define( 'SIMPLEPIE_UPPERCASE', 4 );
+define( 'SIMPLEPIE_PCRE_HTML_ATTRIBUTE', '((?:[\x09\x0A\x0B\x0C\x0D\x20]+[^\x09\x0A\x0B\x0C\x0D\x20\x2F\x3E][^\x09\x0A\x0B\x0C\x0D\x20\x2F\x3D\x3E]*(?:[\x09\x0A\x0B\x0C\x0D\x20]*=[\x09\x0A\x0B\x0C\x0D\x20]*(?:"(?:[^"]* )"|\'(?:[^\']* )\'|(?:[^\x09\x0A\x0B\x0C\x0D\x20\x22\x27\x3E][^\x09\x0A\x0B\x0C\x0D\x20\x3E]* )? ) )? )* )[\x09\x0A\x0B\x0C\x0D\x20]*' );
+define( 'SIMPLEPIE_PCRE_XML_ATTRIBUTE', '((?:\s+(?:(?:[^\s:]+: )?[^\s:]+ )\s*=\s*(?:"(?:[^"]* )"|\'(?:[^\']* )\' ) )* )\s*' );
+define( 'SIMPLEPIE_NAMESPACE_XML', 'http://www.w3.org/XML/1998/namespace' );
+define( 'SIMPLEPIE_NAMESPACE_ATOM_10', 'http://www.w3.org/2005/Atom' );
+define( 'SIMPLEPIE_NAMESPACE_ATOM_03', 'http://purl.org/atom/ns#' );
+define( 'SIMPLEPIE_NAMESPACE_RDF', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#' );
+define( 'SIMPLEPIE_NAMESPACE_RSS_090', 'http://my.netscape.com/rdf/simple/0.9/' );
+define( 'SIMPLEPIE_NAMESPACE_RSS_10', 'http://purl.org/rss/1.0/' );
+define( 'SIMPLEPIE_NAMESPACE_RSS_10_MODULES_CONTENT', 'http://purl.org/rss/1.0/modules/content/' );
+define( 'SIMPLEPIE_NAMESPACE_RSS_20', '' );
+define( 'SIMPLEPIE_NAMESPACE_DC_10', 'http://purl.org/dc/elements/1.0/' );
+define( 'SIMPLEPIE_NAMESPACE_DC_11', 'http://purl.org/dc/elements/1.1/' );
+define( 'SIMPLEPIE_NAMESPACE_W3C_BASIC_GEO', 'http://www.w3.org/2003/01/geo/wgs84_pos#' );
+define( 'SIMPLEPIE_NAMESPACE_GEORSS', 'http://www.georss.org/georss' );
+define( 'SIMPLEPIE_NAMESPACE_MEDIARSS', 'http://search.yahoo.com/mrss/' );
+define( 'SIMPLEPIE_NAMESPACE_MEDIARSS_WRONG', 'http://search.yahoo.com/mrss' );
+define( 'SIMPLEPIE_NAMESPACE_MEDIARSS_WRONG2', 'http://video.search.yahoo.com/mrss' );
+define( 'SIMPLEPIE_NAMESPACE_MEDIARSS_WRONG3', 'http://video.search.yahoo.com/mrss/' );
+define( 'SIMPLEPIE_NAMESPACE_MEDIARSS_WRONG4', 'http://www.rssboard.org/media-rss' );
+define( 'SIMPLEPIE_NAMESPACE_MEDIARSS_WRONG5', 'http://www.rssboard.org/media-rss/' );
+define( 'SIMPLEPIE_NAMESPACE_ITUNES', 'http://www.itunes.com/dtds/podcast-1.0.dtd' );
+define( 'SIMPLEPIE_NAMESPACE_XHTML', 'http://www.w3.org/1999/xhtml' );
+define( 'SIMPLEPIE_IANA_LINK_RELATIONS_REGISTRY', 'http://www.iana.org/assignments/relation/' );
+define( 'SIMPLEPIE_FILE_SOURCE_NONE', 0 );
+define( 'SIMPLEPIE_FILE_SOURCE_REMOTE', 1 );
+define( 'SIMPLEPIE_FILE_SOURCE_LOCAL', 2 );
+define( 'SIMPLEPIE_FILE_SOURCE_FSOCKOPEN', 4 );
+define( 'SIMPLEPIE_FILE_SOURCE_CURL', 8 );
+define( 'SIMPLEPIE_FILE_SOURCE_FILE_GET_CONTENTS', 16 );
+
+// ./wp-includes/rest-api.php
+
+define( 'REST_API_VERSION', '2.0' );
+define( 'REST_REQUEST', true );
+
+// ./wp-includes/class-wp-http-proxy.php
+
+define( 'WP_PROXY_HOST', '127.0.0.1' );
+define( 'WP_PROXY_PORT', '8080' );
+define( 'WP_PROXY_BYPASS_HOSTS', 'localhost, www.example.com, *.wordpress.org' );
+
+// ./wp-includes/class-wp-customize-manager.php
+
+define( 'DOING_AUTOSAVE', true );
+
 // ./wp-includes/rewrite.php
 
 define( 'EP_NONE', 0 );
@@ -665,7 +539,133 @@ define( 'EP_PAGES', 4096 );
 define( 'EP_ALL_ARCHIVES', 3644 );
 define( 'EP_ALL', 8191 );
 
-// ./index.php
+// ./wp-includes/theme.php
 
-define( 'WP_USE_THEMES', true );
+define( 'NO_HEADER_TEXT', false );
+define( 'HEADER_IMAGE_WIDTH', 1280 );
+define( 'HEADER_IMAGE_HEIGHT', 768 );
+define( 'HEADER_TEXTCOLOR', 'black' );
+define( 'HEADER_IMAGE', 'image,.jpg' );
+define( 'BACKGROUND_COLOR', 'white' );
+define( 'BACKGROUND_IMAGE', 'background.jpg' );
+
+// ./wp-includes/wp-db.php
+
+define( 'EZSQL_VERSION', 'WP1.25' );
+define( 'OBJECT', 'OBJECT' );
+define( 'OBJECT_K', 'OBJECT_K' );
+define( 'ARRAY_A', 'ARRAY_A' );
+define( 'ARRAY_N', 'ARRAY_N' );
+
+// ./wp-includes/pomo/po.php
+
+define( 'PO_MAX_LINE_LEN', 79 );
+
+// ./wp-includes/ms-default-constants.php
+
+define( 'UPLOADBLOGSDIR', 'wp-content/blogs.dir' );
+define( 'UPLOADS', 'wp-content/blogs.dir/0/files/' );
+define( 'BLOGUPLOADDIR', 'wp-content/blogs.dir/0/files/' );
+define( 'WPMU_SENDFILE', false );
+define( 'WPMU_ACCEL_REDIRECT', false );
+define( 'VHOST', 'no' );
+
+// ./wp-includes/default-constants.php
+
+define( 'KB_IN_BYTES', 1024 );
+define( 'MB_IN_BYTES', 1024 * KB_IN_BYTES );
+define( 'GB_IN_BYTES', 1024 * MB_IN_BYTES );
+define( 'TB_IN_BYTES', 1024 * GB_IN_BYTES );
+
+define( 'WP_START_TIMESTAMP', microtime( true ) );
+
+define( 'WP_MEMORY_LIMIT', '40M' );
+
+define( 'WP_MAX_MEMORY_LIMIT', '256M' );
+
+define( 'WP_CONTENT_DIR', './wp-content' );
+
+define( 'WP_DEBUG', false );
+
+define( 'WP_DEBUG_DISPLAY', true );
+
+define( 'WP_DEBUG_LOG', false );
+
+define( 'WP_CACHE', false );
+
+define( 'SCRIPT_DEBUG', false );
+
+define( 'MEDIA_TRASH', false );
+
+define( 'SHORTINIT', false );
+
+define( 'WP_FEATURE_BETTER_PASSWORDS', true );
+
+define( 'MINUTE_IN_SECONDS', 60 );
+define( 'HOUR_IN_SECONDS', 60 * MINUTE_IN_SECONDS );
+define( 'DAY_IN_SECONDS', 24 * HOUR_IN_SECONDS );
+define( 'WEEK_IN_SECONDS', 7 * DAY_IN_SECONDS );
+define( 'MONTH_IN_SECONDS', 30 * DAY_IN_SECONDS );
+define( 'YEAR_IN_SECONDS', 365 * DAY_IN_SECONDS );
+
+define( 'WP_CONTENT_URL', 'https://localhost/wp-content' );
+
+define( 'WP_PLUGIN_DIR', WP_CONTENT_DIR . '/plugins' );
+
+define( 'WP_PLUGIN_URL', WP_CONTENT_URL . '/plugins' );
+
+define( 'PLUGINDIR', 'wp-content/plugins' );
+
+define( 'WPMU_PLUGIN_DIR', WP_CONTENT_DIR . '/mu-plugins' );
+
+define( 'WPMU_PLUGIN_URL', WP_CONTENT_URL . '/mu-plugins' );
+
+define( 'COOKIEHASH', '' );
+
+define( 'USER_COOKIE', 'wordpressuser_' . COOKIEHASH );
+
+define( 'PASS_COOKIE', 'wordpresspass_' . COOKIEHASH );
+
+define( 'AUTH_COOKIE', 'wordpress_' . COOKIEHASH );
+
+define( 'SECURE_AUTH_COOKIE', 'wordpress_sec_' . COOKIEHASH );
+
+define( 'LOGGED_IN_COOKIE', 'wordpress_logged_in_' . COOKIEHASH );
+
+define( 'TEST_COOKIE', 'wordpress_test_cookie' );
+
+define( 'COOKIEPATH', '/' );
+
+define( 'SITECOOKIEPATH', '/' );
+
+define( 'ADMIN_COOKIE_PATH', SITECOOKIEPATH . 'wp-admin' );
+
+define( 'PLUGINS_COOKIE_PATH', '/wp-content/plugins' );
+
+define( 'COOKIE_DOMAIN', false );
+
+define( 'RECOVERY_MODE_COOKIE', 'wordpress_rec_' . COOKIEHASH );
+
+define( 'FORCE_SSL_ADMIN', true );
+
+define( 'AUTOSAVE_INTERVAL', 60 );
+
+define( 'EMPTY_TRASH_DAYS', 30 );
+
+define( 'WP_POST_REVISIONS', true );
+
+define( 'WP_CRON_LOCK_TIMEOUT', 60 );
+
+define( 'TEMPLATEPATH', '/wp-content/themes/default' );
+
+define( 'STYLESHEETPATH', '/wp-content/themes/default' );
+
+define( 'WP_DEFAULT_THEME', 'twentytwenty' );
+
+// ./wp-includes/script-loader.php
+
+define( 'CONCATENATE_SCRIPTS', false );
+define( 'COMPRESS_SCRIPTS', false );
+define( 'COMPRESS_CSS', false );
+define( 'ENFORCE_GZIP', true );
 
